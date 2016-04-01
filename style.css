@@ -1,0 +1,33 @@
+
+.container h3{
+	color: #6666ff;
+	
+}
+
+#player{
+	max-width:100%;
+}
+
+.header{
+	text-shadow:0 0 3px grey;
+}
+
+span.views{
+	margin-left:10em;
+}
+
+ul li {
+	width:260px;
+	margin:5px;
+	display:inline-block;
+	border:1px solid white;
+	list-style-type: none;
+	
+}
+
+
+.myThumb{
+	width:100%;
+	
+	
+}
