@@ -16,18 +16,21 @@ span.views{
 	margin-left:10em;
 }
 
-ul li {
-	width:260px;
+ul li.related {
+	width:;
 	margin:5px;
 	display:inline-block;
 	border:1px solid white;
 	list-style-type: none;
+	font-size:97%;
+	cursor:pointer;
 	
 }
 
 
 .myThumb{
 	width:100%;
+	
 	
 	
 }

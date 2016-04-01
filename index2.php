@@ -13,9 +13,51 @@
 <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
+<nav  class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+	   <a href="#" style=""class="pull-left"><img style="height:50px;margin:0px 10px">COVERVIDZ</a>
+	  
+    </div>
+	   <div class="collapse navbar-collapse" id="myNavbar" >
+        <ul class="nav navbar-nav">
+             <li id="butHome" class="active"><a  href="#">Home</a></li>
+	         <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
+	         <li id="but2"><a href="uploadPage.html">Upload a cover</a></li>
+	         <li id="but2"><a href="popPage.html">Pop</a></li>
+	         <li id="but2"><a href="r&bPage.html">R&B</a></li>
+	         <li id="but2"><a href="uploadPage.html">Rap/Hip-hop</a></li>
+	         
+	     </ul>
+		 <form class="navbar-form navbar-left" ng-submit="processForm()" role="search">
+        <div class="form-group" >
+		<div class="input-group" >
+		   <input type="text" style="width:350px;border-radius:30px" class="form-control" ng-model="formData.search" placeholder="Search">
+		  </div>
+        </div>
+        <button type="submit" ng-click="gotoResults()" class="btn btn-success">Search</button>
+      </form>
+		<ul class="nav navbar-nav navbar-right">
+		      <li><a href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a></li>
+	          
+			  
+		    
+		    
+		</ul>
+		</div>
+	
+
+
+    </div>
+</nav>
 <div class="container">
 <div class="text-center">
-<h1 class="header">COVERVIDZ</h1>
+<h1 class="header" style="margin-top:60px">COVERVIDZ</h1>
 </div>
 <div class="row">
 <div class="col-md-8">
@@ -23,7 +65,7 @@
 
 
     
-<div id="dom-target" style="" >
+<div id="dom-target" style="display:none" >
 <?php
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
@@ -57,11 +99,13 @@ $result = $con->query($sql);
 	 
 	 
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
-        WHERE artist = '".$data[0]->artist."' 
+        WHERE (artist = '".$data[0]->artist."'
+		OR coverArtist = '".$data[0]->coverArtist."'OR (genreName = '".$data[0]->genreName."' AND youtubeViews > 5000000))
         AND genre_id = g_id AND songid = song_id 
-		AND Artist_id = a_id 
+		AND Artist_id = a_id		
 		AND URL !='".$data[0]->URL."'
-		ORDER BY youtubeViews DESC";
+		ORDER BY RAND()
+		";
 	
 	$result2 = $con->query($sql2);
 
@@ -161,7 +205,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 echo '<ul >';
 foreach($data2 as $d){
- echo '<li><div class="row"><div class="col-md-6"><b>'.$d->name.'</b><br>'.$d->artist.'<br><em>'.$d->coverArtist.'</em></div><div class="col-md-6"><img class="myThumb" src="'.$d->thumbnail.'"/></div></div></li>';
+ echo '<a href="../index2.php/?v='.$d->URL.'"><li class="related"><div class="row"><div class="col-md-6"><img class="myThumb" src="'.$d->thumbnail.'"/></div><div class="col-md-6"><b>'.$d->name.'</b><br>'.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</div></div></li></a>';
 }
 echo '</ul>';
 ?>
