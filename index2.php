@@ -26,22 +26,43 @@
     </div>
 	   <div class="collapse navbar-collapse" id="myNavbar" >
         <ul class="nav navbar-nav">
-             <li id="butHome" class="active"><a  href="#">Home</a></li>
-	         <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
-	         <li id="but2"><a href="uploadPage.html">Upload a cover</a></li>
-	         <li id="but2"><a href="popPage.html">Pop</a></li>
-	         <li id="but2"><a href="r&bPage.html">R&B</a></li>
-	         <li id="but2"><a href="uploadPage.html">Rap/Hip-hop</a></li>
-	         
-	     </ul>
-		 <form class="navbar-form navbar-left" ng-submit="processForm()" role="search">
+             <li><form class="navbar-form navbar-left" ng-submit="processForm()" role="search">
         <div class="form-group" >
 		<div class="input-group" >
-		   <input type="text" style="width:350px;border-radius:30px" class="form-control" ng-model="formData.search" placeholder="Search">
+		   <input id="filterInput" style="width:550px;line-height:30px;padding-left:10px" type="text" name="search" placeholder="search" ng-model="search.title"><i style="margin-left:-22px" class="glyphicon glyphicon-search"></i>
+
 		  </div>
         </div>
-        <button type="submit" ng-click="gotoResults()" class="btn btn-success">Search</button>
-      </form>
+   
+      </form></li>
+	         <li id="but1"><a href="../aboutPage.html">About Covervidz</a></li>
+	         <li id="but2"><a href="../uploadPage.html">Upload</a></li>
+			 
+			 <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  href="#">All Videos</a></li>
+                <li><a  href="#">Most recent</a></li>
+                <li><a  href="#">Most viewed</a></li>
+                <li role="separator" class="divider"></li>
+		        <li class="dropdown-header">Genres</li>
+		        <li><a  href="#">Pop</a></li>
+		        <li><a  href="#">R&B </a></li>
+		        <li><a  href="#">Rap/Hip-hop</a></li>
+		        <li><a  href="#">Rock</a></li>
+		        <li><a  href="#">Dance</a></li>
+		        <li><a  href="#">Choreography</a></li>
+		        <li><a  href="#">Gospel/Christian</a></li>
+		        <li><a  href="#">Reggae</a></li>
+		        <li><a  href="#">Instrumental/Instrument</a></li>
+		        <li><a  href="#">Metal</a></li>
+		        <li><a  href="#">Soul/Motown</a></li>
+              </ul>
+			  </li>
+	         
+	         
+	     </ul>
+		 
 		<ul class="nav navbar-nav navbar-right">
 		      <li><a href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a></li>
 	          
@@ -56,10 +77,8 @@
     </div>
 </nav>
 <div class="container">
-<div class="text-center">
-<h1 class="header" style="margin-top:60px">COVERVIDZ</h1>
-</div>
-<div class="row">
+
+<div style="margin-top:60px" class="row">
 <div class="col-md-8">
 <div id="player"></div>
 
@@ -100,7 +119,7 @@ $result = $con->query($sql);
 	 
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
         WHERE (artist = '".$data[0]->artist."'
-		OR coverArtist = '".$data[0]->coverArtist."'OR (genreName = '".$data[0]->genreName."' AND youtubeViews > 5000000))
+		OR coverArtist = '".$data[0]->coverArtist."'OR (genreName = '".$data[0]->genreName."' AND youtubeViews > 10000000))
         AND genre_id = g_id AND songid = song_id 
 		AND Artist_id = a_id		
 		AND URL !='".$data[0]->URL."'
@@ -140,10 +159,11 @@ echo htmlspecialchars($output);
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '390',
-          width: '640',
+          height: '440',
+          width: '740',
           videoId: myData,
 		   playerVars: {rel: 0},
+		   
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -180,12 +200,12 @@ echo "<h1>".$data[0]->name." - ".$data[0]->artist."</h1><p>".number_format($data
 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
 */
-/*
+
 var disqus_config = function () {
-this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+//this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = myData; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
-*/
+
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 
@@ -205,7 +225,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 echo '<ul >';
 foreach($data2 as $d){
- echo '<a href="../index2.php/?v='.$d->URL.'"><li class="related"><div class="row"><div class="col-md-6"><img class="myThumb" src="'.$d->thumbnail.'"/></div><div class="col-md-6"><b>'.$d->name.'</b><br>'.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</div></div></li></a>';
+ echo '<a href="../index2.php/?v='.$d->URL.'"><li class="related"><div class="row"><div class="col-md-5 col-xs-12"><img class="myThumb" src="..&#47;'.$d->thumbnail.'"/></div><div class="col-md-7 col-xs-12"><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</div></div></li></a>';
 }
 echo '</ul>';
 ?>

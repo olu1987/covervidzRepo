@@ -28,9 +28,13 @@ ul li.related {
 }
 
 
-.myThumb{
-	width:100%;
+ img.myThumb{
+	width:98%;
 	
 	
 	
+}
+
+.myThumb2{
+	width:200px;
 }
