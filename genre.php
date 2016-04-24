@@ -90,31 +90,7 @@
 <div style="margin-top:60px" class="row">
 <div class="col-md-12">
 
-<?php $search = array("","","","","","","","","","","",); 
-$searchitems = explode(" ", $_GET["search"]); 
- 
-if (isset($searchitems[0])) {
-	array_unshift($search, $searchitems[0]);
-}
-if (isset($searchitems[1])) {
-	array_unshift($search, $searchitems[1]);
-}
-if (isset($searchitems[2])) {
-	array_unshift($search, $searchitems[2]);
-}
-if (isset($searchitems[3])) {
-	array_unshift($search, $searchitems[3]);
-}
-if (isset($searchitems[4])) {
-	array_unshift($search, $searchitems[4]);
-}
-if (isset($searchitems[5])) {
-	array_unshift($search, $searchitems[5]);
-}
-if (isset($searchitems2[0])) {
-	array_unshift($search, $searchitems2[0]);
-}
-      echo $search[0];  ?>
+
     
 <div id="dom-target">
 <?php
@@ -131,12 +107,12 @@ if (mysqli_connect_errno())
   
 	 
 	 
-$sql2 = "SELECT * FROM covers, genre, songs, artists 
-        WHERE (artist LIKE '%".$search[0]."%' AND artist LIKE '%".$search[1]."%'AND artist LIKE '%".$search[2]."%'AND artist LIKE '%".$search[3]."%'
-		OR coverArtist LIKE '%".$search[0]."%' AND coverArtist LIKE '%".$search[1]."%'AND coverArtist LIKE '%".$search[2]."%'AND coverArtist LIKE '%".$search[3]."%' OR name LIKE '%".$search[0]."%' )
-        AND genre_id = g_id AND songid = song_id 
-		AND Artist_id = a_id		
-		ORDER BY RAND()
+$sql2 = "SELECT *
+      FROM covers, songs, artists,genre
+      WHERE genreName = '".$_GET["search"]."'
+      AND songid = song_id
+      AND artist_id = a_id
+	  AND genre_id = g_id
 		";
 	
 	$result2 = $con->query($sql2);
@@ -152,6 +128,9 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 	else{
 		$data2[] = null;
 	}
+
+echo "<h1>".$data2[0]->genreName."</h1>";	
+	
 if($result2->num_rows > 0){
 echo '<ul >';
 foreach($data2 as $d){

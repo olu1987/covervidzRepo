@@ -1,0 +1,66 @@
+
+.container h3{
+	color: #4c2875;
+	
+}
+
+#player{
+	max-width:100%;
+}
+
+.header{
+	text-shadow:0 0 3px grey;
+}
+
+span.views{
+	margin-left:10em;
+}
+
+ul li.related {
+	width:;
+	margin:5px;
+	display:inline-block;
+	border:1px solid white;
+	list-style-type: none;
+	font-size:97%;
+	cursor:pointer;
+	vertical-align: text-top;
+	
+}
+
+
+ img.myThumb{
+	width:98%;
+		
+}
+
+.myThumb2{
+	width:200px;
+}
+
+a,a:hover{
+	color:grey;
+}
+
+.search-button{
+	background-color:#4c2875;
+	border-color:#4c2875;
+	border-radius:0px;
+	height:36px;
+	margin-top:-2px;
+	width:80px;
+}
+
+.search-button:hover{
+	background-color:#7956a2;
+	border-color:#4c2875;
+}
+
+.icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #cccccc;
+  border-radius: 1px;
+}
+
