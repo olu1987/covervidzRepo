@@ -1,7 +1,42 @@
 
+a:hover{
+	text-decoration:none;
+	opacity:0.8;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/HelveticaNeue-UltraLight.otf);
+}
+
+body{
+	background-color: #d9d9d9;
+	
+}
+
+.lander{
+	
+	box-shadow:0 0 3px grey;
+	overflow:invisible;
+	margin:0px;
+	
+}
+
+.results{
+	background-color:#fff;
+	padding-top:20px;
+}
+
 .container h3{
 	color: #4c2875;
-	
+	font-family: myFirstFont, Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:bold;
+}
+
+.genre-title{
+	font-family: myFirstFont, Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight:bold;
+	color:#4c2875;
 }
 
 #player{
@@ -64,3 +99,32 @@ a,a:hover{
   border-radius: 1px;
 }
 
+.small-text{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+
+
+h1.small-text {
+    font-family: myFirstFont, Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:28px;
+	font-weight:bold;
+	color:#6b6969;
+	margin-top:-50px;
+}
+
+
+ul.thumb-box{
+	padding-left:0px;
+}
+
+#form > div:nth-child(10) > input, #form > button,#form > div:nth-child(10) > button{
+	background-color:#7956a2;
+	border-radius:0px;
+	border-color:#7956a2;
+	
+}
+
+.upload-form{
+	border-radius:0px;
+}

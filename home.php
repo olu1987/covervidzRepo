@@ -53,24 +53,24 @@
 			 <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
               <ul class="dropdown-menu">
-			  <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
+			  
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="#">All Videos</a></li>
+                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="#">Pop</a></li>
-		        <li><a  href="#">R&B </a></li>
-		        <li><a  href="#">Rap/Hip-hop</a></li>
-		        <li><a  href="#">Rock</a></li>
-		        <li><a  href="#">Dance</a></li>
-		        <li><a  href="#">Choreography</a></li>
-		        <li><a  href="#">Gospel/Christian</a></li>
-		        <li><a  href="#">Reggae</a></li>
-		        <li><a  href="#">Instrumental/Instrument</a></li>
-		        <li><a  href="#">Metal</a></li>
-		        <li><a  href="#">Soul/Motown</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </li>
 	         
@@ -90,22 +90,26 @@
 
     </div>
 </nav>
-
-<div class="container">
-<div class="jumbotron">
-<div class="row">
-<div class="col-md-6">
-<img style="height:250px"src="images/covervidz-type.png">
-</div>
-<div class="col-md-6">
-<h2>The best covers from YouTube, all in one place</h2>
-</div>
-
-</div>
+<div class="jumbotron lander text-center">
 
 
+<!--<img style="height:350px" src="images/covervidz-type.png" alt="covervidz logo">-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="small-text">The best covers from youtube all in one place</h1>
+
+
+
+
+
+
 </div>
-<div style="margin-top:60px" class="row">
+<div class="container text-center results">
+
+<div style="margin-top:-10px" class="row">
 <div class="col-md-12">
 
 <?php 
@@ -115,7 +119,7 @@ header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["
    ?>
     
 <div>
-<a href="http://localhost/covervidzRepo/genre.php?search=R%26B"><h3>R&B Videos</h3></a>
+<a href="http://localhost/covervidzRepo/genre.php?genre=R%26B"><h3>R&B Videos</h3></a>
 <?php
 
 
@@ -153,7 +157,7 @@ $sql2 = "SELECT *
 		$data2[] = null;
 	}
 if($result2->num_rows > 0){
-echo '<ul >';
+echo '<ul class="thumb-box" >';
 foreach($data2 as $d){
  echo '<a href="index2.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
@@ -164,7 +168,7 @@ echo '</ul>';
    }
 ?>
 </div>
-<a href="http://localhost/covervidzRepo/genre.php?search=pop"><h3>Pop Videos</h3></p>
+<a href="http://localhost/covervidzRepo/genre.php?genre=pop"><h3>Pop Videos</h3></p>
 <?php
 
 
@@ -212,7 +216,7 @@ echo '</ul>';
 	   echo "0 results";
    }
 ?>
-<a href="http://localhost/covervidzRepo/genre.php?search=choreography"><h3>Choreography</h3></a>
+<a href="http://localhost/covervidzRepo/genre.php?genre=choreography"><h3>Choreography</h3></a>
 <?php
 
 
@@ -250,7 +254,7 @@ $sql2 = "SELECT *
 		$data2[] = null;
 	}
 if($result2->num_rows > 0){
-echo '<ul >';
+echo '<ul class="thumb-box">';
 foreach($data2 as $d){
  echo '<a href="index2.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
@@ -260,7 +264,7 @@ echo '</ul>';
 	   echo "0 results";
    }
 ?>
-<a href="http://localhost/covervidzRepo/genre.php?search=gospel/christian"><h3>Gospel/Christian Videos</h3></a>
+<a href="http://localhost/covervidzRepo/genre.php?genre=gospel/christian"><h3>Gospel/Christian Videos</h3></a>
 <?php
 
 
@@ -308,7 +312,7 @@ echo '</ul>';
 	   echo "0 results";
    }
 ?>
-<a href="http://localhost/covervidzRepo/genre.php?search=rap/hip-hop"><h3>Rap Videos</h3>
+<a href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop"><h3>Rap Videos</h3>
 <?php
 
 
@@ -358,7 +362,29 @@ echo '</ul>';
 ?>
 
 
+</div>
+</div>
+</div>
+
+<div class="jumbotron lander">
+<div class="container">
+
+<!--<img style="height:350px" src="images/covervidz-type.png" alt="covervidz logo">-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="aboutPage.html">About Covervidz</a>
+<a style="margin-left:20px" href="uploadPage.html">Upload</a>
+<a style="margin-left:20px" href="uploadPage.html">Contact us</a>
+<a style="margin-left:20px" href="">Sitemap</a>
+<a style="margin-left:20px" href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a>
+
+</div>
 
 
 
+
+</div>
 </body>

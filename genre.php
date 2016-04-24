@@ -1,8 +1,48 @@
+<?php
 
+if (isset($_GET["search"])) {
+header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
+}
+
+
+//echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
+$con = mysqli_connect("localhost","root","","CoverChart2");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+  
+	 
+	 
+$sql2 = "SELECT *
+      FROM covers, songs, artists,genre
+      WHERE genreName = '".$_GET["genre"]."'
+      AND songid = song_id
+      AND artist_id = a_id
+	  AND genre_id = g_id
+	  ORDER BY -youtubeViews
+		";
+	
+	$result2 = $con->query($sql2);
+
+
+
+   $data2 = array();
+  if($result2->num_rows > 0){
+  while($row2 = $result2->fetch_object()) {
+        $data2[] = $row2;
+		}
+  }
+	else{
+		$data2[] = null;
+	}
+
+?>
 <!doctype html>
 <html>
 <head>
-<title>COVERVIDZ</title>
+<title><?php echo $data2[0]->genreName;	?> videos - COVERVIDZ.COM</title>
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -14,6 +54,12 @@
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="../css/styles-responsive.css" />
+<style>
+ img.myThumb{
+	height:164px;
+		
+}
+</style>
 </head>
 
 <body>
@@ -47,24 +93,24 @@
 			 <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
               <ul class="dropdown-menu">
-			  <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
+			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="#">All Videos</a></li>
+                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="#">Pop</a></li>
-		        <li><a  href="#">R&B </a></li>
-		        <li><a  href="#">Rap/Hip-hop</a></li>
-		        <li><a  href="#">Rock</a></li>
-		        <li><a  href="#">Dance</a></li>
-		        <li><a  href="#">Choreography</a></li>
-		        <li><a  href="#">Gospel/Christian</a></li>
-		        <li><a  href="#">Reggae</a></li>
-		        <li><a  href="#">Instrumental/Instrument</a></li>
-		        <li><a  href="#">Metal</a></li>
-		        <li><a  href="#">Soul/Motown</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </li>
 	         
@@ -85,7 +131,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container text-center results">
 
 <div style="margin-top:60px" class="row">
 <div class="col-md-12">
@@ -97,42 +143,11 @@
 
 
 
-//echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("localhost","root","","CoverChart2");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  
-	 
-	 
-$sql2 = "SELECT *
-      FROM covers, songs, artists,genre
-      WHERE genreName = '".$_GET["search"]."'
-      AND songid = song_id
-      AND artist_id = a_id
-	  AND genre_id = g_id
-		";
-	
-	$result2 = $con->query($sql2);
 
-
-
-   $data2 = array();
-  if($result2->num_rows > 0){
-  while($row2 = $result2->fetch_object()) {
-        $data2[] = $row2;
-		}
-  }
-	else{
-		$data2[] = null;
-	}
-
-echo "<h1>".$data2[0]->genreName."</h1>";	
+echo "<h1 class='genre-title'>".$data2[0]->genreName."</h1>";	
 	
 if($result2->num_rows > 0){
-echo '<ul >';
+echo '<ul class="thumb-box">';
 foreach($data2 as $d){
  echo '<a href="index2.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
@@ -150,10 +165,29 @@ echo '</ul>';
     </script>
 
 
-<?php
+</div>
+</div>
+</div>
+<div class="jumbotron lander">
+<div class="container">
+
+<!--<img style="height:350px" src="images/covervidz-type.png" alt="covervidz logo">-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="aboutPage.html">About Covervidz</a>
+<a style="margin-left:20px" href="uploadPage.html">Upload</a>
+<a style="margin-left:20px" href="uploadPage.html">Contact us</a>
+<a style="margin-left:20px" href="">Sitemap</a>
+<a style="margin-left:20px" href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a>
+
+</div>
 
 
 
-?>
+
+</div>
 
 </body>

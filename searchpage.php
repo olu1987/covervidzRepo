@@ -44,27 +44,27 @@
       </form></li>
 	         
 			 
-			 <li class="dropdown">
+			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
               <ul class="dropdown-menu">
 			  <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="#">All Videos</a></li>
+                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="#">Pop</a></li>
-		        <li><a  href="#">R&B </a></li>
-		        <li><a  href="#">Rap/Hip-hop</a></li>
-		        <li><a  href="#">Rock</a></li>
-		        <li><a  href="#">Dance</a></li>
-		        <li><a  href="#">Choreography</a></li>
-		        <li><a  href="#">Gospel/Christian</a></li>
-		        <li><a  href="#">Reggae</a></li>
-		        <li><a  href="#">Instrumental/Instrument</a></li>
-		        <li><a  href="#">Metal</a></li>
-		        <li><a  href="#">Soul/Motown</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?search=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </li>
 	         
@@ -85,7 +85,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container text-center results">
 
 <div style="margin-top:60px" class="row">
 <div class="col-md-12">
@@ -136,7 +136,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 		OR coverArtist LIKE '%".$search[0]."%' AND coverArtist LIKE '%".$search[1]."%'AND coverArtist LIKE '%".$search[2]."%'AND coverArtist LIKE '%".$search[3]."%' OR name LIKE '%".$search[0]."%' )
         AND genre_id = g_id AND songid = song_id 
 		AND Artist_id = a_id		
-		ORDER BY RAND()
+		ORDER BY -youtubeViews
 		";
 	
 	$result2 = $con->query($sql2);
@@ -153,11 +153,11 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 		$data2[] = null;
 	}
 if($result2->num_rows > 0){
-echo '<ul >';
+echo '<ul class="thumb-box">';
 foreach($data2 as $d){
  echo '<a href="index2.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
-echo '</ul>';	
+echo '</ul >';	
 }
    else{
 	   echo "0 results";
@@ -171,10 +171,28 @@ echo '</ul>';
     </script>
 
 
-<?php
+</div>
+</div>
+</div>
+<div class="jumbotron lander">
+<div class="container">
+
+<!--<img style="height:350px" src="images/covervidz-type.png" alt="covervidz logo">-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="aboutPage.html">About Covervidz</a>
+<a style="margin-left:20px" href="uploadPage.html">Upload</a>
+<a style="margin-left:20px" href="uploadPage.html">Contact us</a>
+<a style="margin-left:20px" href="">Sitemap</a>
+<a style="margin-left:20px" href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a>
+
+</div>
 
 
 
-?>
 
+</div>
 </body>
