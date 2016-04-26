@@ -187,7 +187,7 @@ if (typeof $params.song != 'undefined') {
 		     .success(function(data){
 				 $log.info(data);
 				 $scope.form = {};
-				 alert('Your Video Has been Uploaded!')
+				 alert('Your Video Has been Uploaded!'+ )
 				// $scope.submitForm()
 			 })
 		     .error(function(err){

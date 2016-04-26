@@ -53,7 +53,7 @@ $sql2 = "SELECT *
 <meta http-equiv="content-script-type" content="text/javascript">
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="../css/styles-responsive.css" />
+<link rel="stylesheet" type="text/css" href="css/styles-responsive.css" />
 <style>
  img.myThumb{
 	height:164px;
@@ -63,31 +63,27 @@ $sql2 = "SELECT *
 </head>
 
 <body>
-<nav  class="navbar navbar-default navbar-fixed-top">
+<!--<nav  class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
      <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
+      
 	   <a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img style="height:60px"src="images/covervidz-type.png"></a>
 	  
     </div>
 	   <div id="myNavbar" >
         <ul class="nav navbar-nav">
-             <li><form class="navbar-form navbar-left" role="search">
-        <div class="form-group" >
+             <form class="navbar-form navbar-left" role="search">
+        
 		<div class="input-group" action="searchpage.php" method="get" >
 		   <input id="filterInput" style="width:550px;line-height:30px;padding-left:10px" type="text" name="search" placeholder="search"><button class="btn btn-success search-button"  type='submit'>
   <i class='fa fa-search'></i>
 </button>
 
 
-		  </div>
+		  
         </div>
    
-      </form></li>
+      </form>
 	         
 			 
 			 <li class="dropdown">
@@ -129,7 +125,53 @@ $sql2 = "SELECT *
 
 
     </div>
-</nav>
+</nav>-->
+<div class="mynav">
+
+<form class="navbar-form navbar-left" role="search">
+
+<div class="dropdown" style="float:left;display:inline-block;width:23%">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img id="logo-button" src="images/covervidz-logo-shadow.png"><i class="fa fa-bars nav-bars" aria-hidden="true"></i></span></a>
+              <ul class="dropdown-menu">
+			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
+	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
+                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
+                <li><a  href="#">Most recent</a></li>
+                <li><a  href="#">Most viewed</a></li>
+                <li role="separator" class="divider"></li>
+		        <li class="dropdown-header">Genres</li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
+              </ul>
+			  </div>
+        <div style="float:left;display:inline-block;;width:10%;margin-left:23px;margin-right:50px;margin-top:-9px"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img style="height:60px;display:none"src="images/covervidz-type.png"></a></div>
+		
+		
+		<div style="float:left;display:inline-block;width:75%"class="input-group" action="searchpage.php" method="get" >
+		  <div style="float:left;display:inline-block;width:89%">
+		   <input style="width:100%" id="filterInput" type="text" name="search" placeholder="search">
+		  </div>
+		  <div style="float:left;display:inline-block;width:10%;margin-top:2px">
+		   <button style="float:right;display:inline-block" class="btn btn-success search-button"  type='submit'>
+           <i class='fa fa-search'></i>
+           </button>
+          </div>
+
+		  
+        </div>
+   
+      </form>
+	  
+</div>
 
 <div class="container text-center results">
 
@@ -178,7 +220,6 @@ echo '</ul>';
 <br>
 <br>
 <a href="aboutPage.html">About Covervidz</a>
-<a style="margin-left:20px" href="uploadPage.html">Upload</a>
 <a style="margin-left:20px" href="uploadPage.html">Contact us</a>
 <a style="margin-left:20px" href="">Sitemap</a>
 <a style="margin-left:20px" href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a>

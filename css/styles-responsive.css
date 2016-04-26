@@ -6,8 +6,10 @@
 	
 }
 
-@media(max-width:1199px){
-	
+@media(max-width:991px){
+	input#filterInput{
+		width:350px;
+	}
 	
 }
 
@@ -22,9 +24,37 @@
 
 @media(max-width:767px){
 	img.myThumb{
-		width:200px;
+		width:240px;
 		
 	}
+	
+	.search-button{
+		width:40px;
+	}
+	
+	input#filterInput{
+		
+	}
+	
+	form.navbar-form.navbar-left{
+		margin-top:0px;
+		width:100%;
+		margin:0px;
+	}
+	
+	.mynav{
+		position:fixed;
+		z-index:3;
+	}
+	
+	#logo-button{
+		margin-top:-3px;
+		height:45px;
+		display:block;
+	}
 
+	.nav-bars{
+		display:none;
+	}
 }
 

@@ -376,7 +376,7 @@ echo '</ul>';
 <br>
 <br>
 <a href="aboutPage.html">About Covervidz</a>
-<a style="margin-left:20px" href="uploadPage.html">Upload</a>
+
 <a style="margin-left:20px" href="uploadPage.html">Contact us</a>
 <a style="margin-left:20px" href="">Sitemap</a>
 <a style="margin-left:20px" href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a>

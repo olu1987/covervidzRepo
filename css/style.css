@@ -125,6 +125,18 @@ ul.thumb-box{
 	
 }
 
-.upload-form{
-	border-radius:0px;
+input#filterInput{
+width:50%;
+line-height:30px;
+padding-left:10px
+
 }
+
+#logo-button{
+	display:none;
+}
+
+.mynav{
+		height:60px;
+		background-color:#eee;
+	}
