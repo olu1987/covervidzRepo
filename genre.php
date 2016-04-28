@@ -161,11 +161,11 @@ $sql2 = "SELECT *
 		
 		
 		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
-		  <div id="my-input" style="float:left;display:inline-block;">
+		  <div id="my-input" style="float:left;">
 		   <input class="input" id="filterInput" type="text" name="search" placeholder="search">
 		  </div>
 		  <div style="float:left;display:inline-block;width:10%;margin-top:2px">
-		   <button style="float:right;display:inline-block" class="btn btn-success search-button"  type='submit'>
+		   <button id="search-button" style="float:right;display:inline-block" class="btn btn-success search-button"  type='submit'>
            <i class='fa fa-search'></i>
            </button>
           </div>
