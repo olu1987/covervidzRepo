@@ -1,4 +1,8 @@
-
+<?php 
+if (isset($_GET["search"])) {
+header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
+}
+   ?>
 <!doctype html>
 <html>
 <head>
@@ -38,8 +42,8 @@
         <ul class="nav navbar-nav">
              <li><form class="navbar-form navbar-left" role="search">
         <div class="form-group" >
-		<div class="input-group" action="searchpage.php" method="get" >
-		   <input id="filterInput" style="width:550px;line-height:30px;padding-left:10px" type="text" name="search" placeholder="search"><button class="btn btn-success search-button"  type='submit'>
+		<div class="input-group" action="searchpage.php" method="get">
+		   <input id="filterInput" style="width:550px;line-height:30px;padding-left:10px" type="text" name="search" placeholder="search" ><button class="btn btn-success search-button"  type='submit'>
   <i class='fa fa-search'></i>
 </button>
 
@@ -112,11 +116,7 @@
 <div style="margin-top:-10px" class="row">
 <div class="col-md-12">
 
-<?php 
-if (isset($_GET["search"])) {
-header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
-}
-   ?>
+
     
 <div>
 <a href="http://localhost/covervidzRepo/genre.php?genre=R%26B"><h3>R&B Videos</h3></a>

@@ -58,6 +58,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 		$data2[] = null;
 	}
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -76,6 +77,19 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 <link rel="stylesheet" type="text/css" href="../css/styles-responsive.css" />
 </head>
 <body>
+<div id="dom-target" style="display:none" >
+<?php
+
+
+
+	
+$output = $data[0]->URL;
+echo htmlspecialchars($output);
+
+
+?>
+
+</div>
 
 <nav  class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -152,19 +166,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 
 
     
-<div id="dom-target" style="display:none" >
-<?php
 
-
-
-	
-$output = $data[0]->URL;
-echo htmlspecialchars($output);
-
-
-?>
-
-</div>
 <script>
 	  var div = document.getElementById("dom-target");
     var myData = div.textContent;

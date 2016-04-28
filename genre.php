@@ -47,6 +47,7 @@ $sql2 = "SELECT *
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script data-require="bootstrap@*" data-semver="3.0.2" src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
 <script src="https://www.youtube.com/iframe_api"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,6 +55,7 @@ $sql2 = "SELECT *
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/styles-responsive.css" />
+<script src="js/scripts.js"></script>	
 <style>
  img.myThumb{
 	height:164px;
@@ -128,10 +130,12 @@ $sql2 = "SELECT *
 </nav>-->
 <div class="mynav">
 
-<form class="navbar-form navbar-left" role="search">
+<form id="form" style="width:100%" class="navbar-form navbar-left" role="search">
+<div class="nav-col-0">
+</div>
 
-<div class="dropdown" style="float:left;display:inline-block;width:23%">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img id="logo-button" src="images/covervidz-logo-shadow.png"><i class="fa fa-bars nav-bars" aria-hidden="true"></i></span></a>
+<div class="dropdown nav-col-1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars nav-bars" aria-hidden="true"></i></span></a>
               <ul class="dropdown-menu">
 			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
@@ -153,19 +157,19 @@ $sql2 = "SELECT *
 		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </div>
-        <div style="float:left;display:inline-block;;width:10%;margin-left:23px;margin-right:50px;margin-top:-9px"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img style="height:60px;display:none"src="images/covervidz-type.png"></a></div>
+        <div class="nav-col-2"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
 		
 		
-		<div style="float:left;display:inline-block;width:75%"class="input-group" action="searchpage.php" method="get" >
-		  <div style="float:left;display:inline-block;width:89%">
-		   <input style="width:100%" id="filterInput" type="text" name="search" placeholder="search">
+		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
+		  <div id="my-input" style="float:left;display:inline-block;">
+		   <input class="input" id="filterInput" type="text" name="search" placeholder="search">
 		  </div>
 		  <div style="float:left;display:inline-block;width:10%;margin-top:2px">
 		   <button style="float:right;display:inline-block" class="btn btn-success search-button"  type='submit'>
            <i class='fa fa-search'></i>
            </button>
           </div>
-
+        <a href="http://localhost/covervidzRepo/home.php"><img id="logo-button" src="images/covervidz-logo-shadow.png">
 		  
         </div>
    

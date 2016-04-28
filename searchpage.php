@@ -132,9 +132,8 @@ if (mysqli_connect_errno())
 	 
 	 
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
-        WHERE (artist LIKE '%".$search[0]."%' AND artist LIKE '%".$search[1]."%'AND artist LIKE '%".$search[2]."%'AND artist LIKE '%".$search[3]."%'
-		OR coverArtist LIKE '%".$search[0]."%' AND coverArtist LIKE '%".$search[1]."%'AND coverArtist LIKE '%".$search[2]."%'AND coverArtist LIKE '%".$search[3]."%' OR name LIKE '%".$search[0]."%' )
-        AND genre_id = g_id AND songid = song_id 
+        WHERE (artist LIKE '%".$search[0]."%' OR coverArtist LIKE '%".$search[0]."%'OR name LIKE '%".$search[0]."%'OR genreName LIKE '%".$search[0]."%' )
+        AND (artist LIKE '%".$search[1]."%' OR coverArtist LIKE '%".$search[1]."%'OR name LIKE '%".$search[1]."%'OR genreName LIKE '%".$search[1]."%' ) AND (artist LIKE '%".$search[2]."%' OR coverArtist LIKE '%".$search[2]."%'OR name LIKE '%".$search[2]."%'OR genreName LIKE '%".$search[2]."%' ) AND (artist LIKE '%".$search[3]."%' OR coverArtist LIKE '%".$search[3]."%'OR name LIKE '%".$search[3]."%'OR genreName LIKE '%".$search[3]."%' ) AND (artist LIKE '%".$search[4]."%' OR coverArtist LIKE '%".$search[4]."%'OR name LIKE '%".$search[4]."%'OR genreName LIKE '%".$search[4]."%' ) AND genre_id = g_id AND songid = song_id 
 		AND Artist_id = a_id		
 		ORDER BY -youtubeViews
 		";
