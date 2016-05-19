@@ -13,41 +13,21 @@
 <meta http-equiv="content-script-type" content="text/javascript">
 <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="../css/styles-responsive.css" />
+<link rel="stylesheet" type="text/css" href="css/styles-responsive.css" />
+<script src="js/scripts.js"></script>	
 </head>
 
 <body>
-<nav  class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-	   <a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img style="height:60px"src="images/covervidz-type.png"></a>
-	  
-    </div>
-	   <div id="myNavbar" >
-        <ul class="nav navbar-nav">
-             <li><form class="navbar-form navbar-left" role="search">
-        <div class="form-group" >
-		<div class="input-group" action="searchpage.php" method="get" >
-		   <input id="filterInput" style="width:550px;line-height:30px;padding-left:10px" type="text" name="search" placeholder="search"><button class="btn btn-success search-button"  type='submit'>
-  <i class='fa fa-search'></i>
-</button>
+<div class="mynav">
 
+<form id="form" style="width:100%" class="navbar-form navbar-left" role="search">
+<div class="nav-col-0">
+</div>
 
-		  </div>
-        </div>
-   
-      </form></li>
-	         
-			 
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
+<div class="dropdown nav-col-1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars nav-bars" aria-hidden="true"></i></span></a>
               <ul class="dropdown-menu">
-			  <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
+			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
                 <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
@@ -64,26 +44,28 @@
 		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
 		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
 		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?search=soul/motown">Soul/Motown</a></li>
+		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
-			  </li>
-	         
-	         
-	     </ul>
-		 
-		<ul class="nav navbar-nav navbar-right">
-		      <li><a href="https://www.facebook.com/covervidz" ><i class="fa fa-facebook"></i></a></li>
-	          
-			  
-		    
-		    
-		</ul>
-		</div>
-	
-
-
-    </div>
-</nav>
+			  </div>
+        <div class="nav-col-2"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
+		
+		
+		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
+		  <div id="my-input" style="float:left;">
+		   <input class="input" id="filterInput" type="text" name="search" placeholder="search">
+		  </div>
+		  <div style="float:left;display:inline-block;width:10%;margin-top:2px">
+		   <button id="search-button" style="float:right;display:inline-block" class="btn btn-success search-button"  type='submit'>
+           <i class='fa fa-search'></i>
+           </button>
+          </div>
+        <a href="http://localhost/covervidzRepo/home.php"><img id="logo-button" src="images/covervidz-logo-shadow.png">
+		  
+        </div>
+   
+      </form>
+	  
+</div>
 
 <div class="container text-center results">
 
@@ -114,8 +96,16 @@ if (isset($searchitems[5])) {
 if (isset($searchitems2[0])) {
 	array_unshift($search, $searchitems2[0]);
 }
-      echo $search[0];  ?>
-    
+      echo $search[0];  
+	  
+	  $results = 0;
+	  
+	  if (isset($_GET["r"])) {
+		  $results = $_GET["r"];
+	  }
+	  echo $results;
+	  echo $results;
+   ?>
 <div id="dom-target">
 <?php
 
@@ -129,13 +119,15 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-	 
+	//REMMEBER TO CHANGE SONG_ID TO SONGS.ID ON LIVE CODE!!!!!! 
 	 
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
-        WHERE (artist LIKE '%".$search[0]."%' OR coverArtist LIKE '%".$search[0]."%'OR name LIKE '%".$search[0]."%'OR genreName LIKE '%".$search[0]."%' )
-        AND (artist LIKE '%".$search[1]."%' OR coverArtist LIKE '%".$search[1]."%'OR name LIKE '%".$search[1]."%'OR genreName LIKE '%".$search[1]."%' ) AND (artist LIKE '%".$search[2]."%' OR coverArtist LIKE '%".$search[2]."%'OR name LIKE '%".$search[2]."%'OR genreName LIKE '%".$search[2]."%' ) AND (artist LIKE '%".$search[3]."%' OR coverArtist LIKE '%".$search[3]."%'OR name LIKE '%".$search[3]."%'OR genreName LIKE '%".$search[3]."%' ) AND (artist LIKE '%".$search[4]."%' OR coverArtist LIKE '%".$search[4]."%'OR name LIKE '%".$search[4]."%'OR genreName LIKE '%".$search[4]."%' ) AND genre_id = g_id AND songid = song_id 
+        WHERE (artist LIKE '%".mysqli_real_escape_string($con, $search[0])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[0])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[0])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[0])."%' )
+        AND (artist LIKE '%".mysqli_real_escape_string($con, $search[1])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[1])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[2])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[2])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[3])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[3])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[4])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[4])."%' ) AND genre_id = g_id AND songid = song_id 
 		AND Artist_id = a_id		
 		ORDER BY -youtubeViews
+	    LIMIT 30 OFFSET $results
+		
 		";
 	
 	$result2 = $con->query($sql2);
@@ -154,14 +146,21 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 if($result2->num_rows > 0){
 echo '<ul class="thumb-box">';
 foreach($data2 as $d){
- echo '<a href="index2.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
+ echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
 echo '</ul >';	
 }
    else{
-	   echo "0 results";
+	   echo "0 results<br>";
    }
 ?>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=0">1-30</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=30">31-60</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=60">61-90</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=90">91-120</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=120">121-150</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=150">151-180</a>
+<a href="http://localhost/covervidzRepo/searchpage.php?r=180">181-210</a>
 </div>
 <script>
 	  var div = document.getElementById("dom-target");
