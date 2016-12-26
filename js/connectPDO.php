@@ -1,7 +1,7 @@
 <?php
 
 		
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {

@@ -1,12 +1,12 @@
 <?php
 
 if (isset($_GET["search"])) {
-header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
+header("Location: http://www.covervidz.com/searchpage.php?search=".$_GET["search"]);
 }
 
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -18,7 +18,7 @@ if (mysqli_connect_errno())
 $sql2 = "SELECT *
       FROM covers, songs, artists,genre
       WHERE genreName = '".$_GET["genre"]."'
-      AND songid = song_id
+      AND songid = songs.id
       AND artist_id = a_id
 	  AND genre_id = g_id
 	  ORDER BY -youtubeViews
@@ -69,7 +69,7 @@ $sql2 = "SELECT *
   <div class="container-fluid">
      <div class="navbar-header">
       
-	   <a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img style="height:60px"src="images/covervidz-type.png"></a>
+	   <a href="http://www.covervidz.com" class="pull-left"><img style="height:60px"src="images/covervidz-type.png"></a>
 	  
     </div>
 	   <div id="myNavbar" >
@@ -93,22 +93,22 @@ $sql2 = "SELECT *
               <ul class="dropdown-menu">
 			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
+                <li><a  href="http://www.covervidz.com/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </li>
 	         
@@ -139,25 +139,25 @@ $sql2 = "SELECT *
               <ul class="dropdown-menu">
 			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
+                <li><a  href="http://www.covervidz.com/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </div>
-        <div class="nav-col-2"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
+        <div class="nav-col-2"><a href="http://www.covervidz.com" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
 		
 		
 		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
@@ -169,7 +169,7 @@ $sql2 = "SELECT *
            <i class='fa fa-search'></i>
            </button>
           </div>
-        <a href="http://localhost/covervidzRepo/home.php"><img id="logo-button" src="images/covervidz-logo-shadow.png">
+        <a href="http://www.covervidz.com"><img id="logo-button" src="images/covervidz-logo-shadow.png">
 		  
         </div>
    
@@ -195,7 +195,7 @@ echo "<h1 class='genre-title'>".$data2[0]->genreName."</h1>";
 if($result2->num_rows > 0){
 echo '<ul class="thumb-box">';
 foreach($data2 as $d){
- echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
+ echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="http://img.youtube.com/vi/'.$d->URL .'/0.jpg"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
 echo '</ul>';	
 }

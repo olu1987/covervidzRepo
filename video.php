@@ -1,12 +1,12 @@
 <?php
 if (isset($_GET["search"])) {
-header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
+header("Location: http://www.covervidz.com/searchpage.php?search=".$_GET["search"]);
 }
 // Start the session
 session_start();
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -17,7 +17,7 @@ if (mysqli_connect_errno())
       FROM covers, genre, songs, artists
       WHERE URL = '". htmlspecialchars($_GET["v"])."'
       AND genre_id = g_id
-	  AND songid = song_id
+	  AND songid = songs.id
 	  AND Artist_id = a_id
 	 ";
 
@@ -38,7 +38,7 @@ $result = $con->query($sql);
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
         WHERE (artist = '".$data[0]->artist."'
 		OR coverArtist = '".$data[0]->coverArtist."'OR (genreName = '".$data[0]->genreName."' AND youtubeViews > 10000000))
-        AND genre_id = g_id AND songid = song_id 
+        AND genre_id = g_id AND songid = songs.id
 		AND Artist_id = a_id		
 		AND URL !='".$data[0]->URL."'
 		ORDER BY RAND()
@@ -100,25 +100,25 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
               <ul class="dropdown-menu">
 			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
+                <li><a  href="http://www.covervidz.com/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </div>
-        <div class="nav-col-2"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img class="logo-writing" src="../images/covervidz-type-ss.png"/></a></div>
+        <div class="nav-col-2"><a href="http://www.covervidz.com" class="pull-left"><img class="logo-writing" src="../images/covervidz-type-ss.png"/></a></div>
 		
 		
 		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
@@ -130,7 +130,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
            <i class='fa fa-search'></i>
            </button>
           </div>
-        <a href="http://localhost/covervidzRepo/home.php"><img id="logo-button" src="../images/covervidz-logo-shadow-ss.png"></a>
+        <a href="http://www.covervidz.com"><img id="logo-button" src="../images/covervidz-logo-shadow-ss.png"></a>
 		  
         </div>
    
@@ -171,11 +171,8 @@ echo htmlspecialchars($output);
     </script>
 
 <?php 
-echo "<h1>".$data[0]->name." - ".$data[0]->artist."</h1><p>".number_format($data[0]->youtubeViews)."</p><p style='color:#41a3ff;'>Added ".$data[0]->datePosted."</p><a href='http://localhost/covervidzRepo/searchpage.php?search=".$data[0]->coverArtist."'><h3>".$data[0]->coverArtist."</h3></a>";
+echo "<h1>".$data[0]->name." - ".$data[0]->artist."</h1><p>".number_format($data[0]->youtubeViews)."</p><p style='color:#41a3ff;'>Added ".$data[0]->datePosted."</p><a href='http://www.covervidz.com/searchpage.php?search=".$data[0]->coverArtist."'><h3>".$data[0]->coverArtist."</h3></a>";
 
-$JSON = file_get_contents("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=hqepb5hzuB0&key={AIzaSyDD-g_4Yv2MM0LO3H7tKvTzDGe1EES888U}");
-$json_data = json_decode($JSON, true);
-echo $json_data['items'][0]['statistics']['viewCount'];
 ?>
 
 <div  style="margin-top:13px;float:left;display:inline;"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a></div>

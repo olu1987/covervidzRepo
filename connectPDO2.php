@@ -1,4 +1,4 @@
-<?php $con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+<?php $con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -7,7 +7,7 @@ if (mysqli_connect_errno())
  
 $sql = 'SELECT *
       FROM covers, songs, artists,genre
-      WHERE songid = song_id
+      WHERE songid = songs.id
       AND artist_id = a_id
 	  AND genre_id = g_id';
 

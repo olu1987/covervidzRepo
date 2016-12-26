@@ -46,7 +46,7 @@
 		        <li><a  href="http://www.covervidz.com/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </div>
-        <div class="nav-col-2"><a href="http://www.covervidz.com/home.php" class="pull-left"><img class="logo-writing" src="../images/covervidz-type.png"/></a></div>
+        <div class="nav-col-2"><a href="http://www.covervidz.com" class="pull-left"><img class="logo-writing" src="../images/covervidz-type.png"/></a></div>
 		
 		
 		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
@@ -58,7 +58,7 @@
            <i class='fa fa-search'></i>
            </button>
           </div>
-        <a href="http://www.covervidz.com/home.php"><img id="logo-button" src="../images/covervidz-logo-shadow.png"></a>
+        <a href="http://www.covervidz.com"><img id="logo-button" src="../images/covervidz-logo-shadow.png"></a>
 		  
         </div>
    
@@ -103,7 +103,7 @@ if (isset($searchitems2[0])) {
 
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user","Elijah87","u368238327_cove2");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -135,7 +135,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 if($result2->num_rows > 0){
 echo '<ul class="thumb-box">';
 foreach($data2 as $d){
- echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
+ echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="http://img.youtube.com/vi/'.$d->URL .'/0.jpg"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
 echo '</ul >';	
 }

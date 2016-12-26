@@ -1,12 +1,12 @@
 <?php
 if (isset($_GET["search"])) {
-header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["search"]);
+header("Location: http://www.covervidz.com/searchpage.php?search=".$_GET["search"]);
 }
 // Start the session
 session_start();
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -16,7 +16,7 @@ if (mysqli_connect_errno())
  $sql = "SELECT *
       FROM covers, genre, songs, artists
       WHERE genre_id = g_id
-	  AND songid = song_id
+	  AND songid = songs.id
 	  AND Artist_id = a_id
 	 ";
 
@@ -37,7 +37,7 @@ $result = $con->query($sql);
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
         WHERE (artist = '".$data[0]->artist."'
 		OR coverArtist = '".$data[0]->coverArtist."'OR (genreName = '".$data[0]->genreName."' AND youtubeViews > 10000000))
-        AND genre_id = g_id AND songid = song_id 
+        AND genre_id = g_id AND songid = songs.id
 		AND Artist_id = a_id		
 		AND URL !='".$data[0]->URL."'
 		ORDER BY RAND()

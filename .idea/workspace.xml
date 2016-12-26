@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77d221b3-772e-4b56-b7e3-a03c2b0acab7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/home.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectPDO2.php" afterPath="$PROJECT_DIR$/connectPDO2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/genre.php" afterPath="$PROJECT_DIR$/genre.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get-data.php" afterPath="$PROJECT_DIR$/get-data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/connectPDO.php" afterPath="$PROJECT_DIR$/js/connectPDO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/live pages/all.php" afterPath="$PROJECT_DIR$/live pages/all.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/live pages/new.php" afterPath="$PROJECT_DIR$/live pages/new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/live pages/popular.php" afterPath="$PROJECT_DIR$/live pages/popular.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchpage.php" afterPath="$PROJECT_DIR$/searchpage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thumbs/video.php" afterPath="$PROJECT_DIR$/thumbs/video.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uploadPage.html" afterPath="$PROJECT_DIR$/uploadPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video.php" afterPath="$PROJECT_DIR$/video.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,11 +32,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="all.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/live pages/all.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            <state relative-caret-position="149">
+              <caret line="105" column="98" lean-forward="false" selection-start-line="105" selection-start-column="98" selection-end-line="105" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/live pages/new.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="118" column="18" lean-forward="false" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popular.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/live pages/popular.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="120" column="10" lean-forward="true" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -41,8 +65,8 @@
       <file leaf-file-name="searchpage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searchpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="114" column="21" lean-forward="false" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="114" column="90" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -52,7 +76,17 @@
         <entry file="file://$PROJECT_DIR$/thumbs/video.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+              <caret line="109" column="51" lean-forward="false" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadPage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uploadPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -61,38 +95,8 @@
       <file leaf-file-name="video.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/video.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connectPDO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/connectPDO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connectPDO2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connectPDO2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+            <state relative-caret-position="217">
+              <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,8 +105,8 @@
       <file leaf-file-name="genre.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/genre.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="122">
+              <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -111,8 +115,18 @@
       <file leaf-file-name="get-data.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get-data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="306">
+              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="103" column="41" lean-forward="false" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -123,9 +137,24 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>(&quot;localhost&quot;,&quot;root&quot;,&quot;&quot;,&quot;CoverChart2&quot;)</find>
+      <find>$con = mysqli_connect(&quot;mysql.hostinger.co.uk&quot;,&quot;u368238327_vidz&quot;,&quot;&quot;,&quot;u368238327_vidz&quot;);</find>
+      <find>http://localhost/covervidzRepo</find>
+      <find>con =</find>
+      <find>song_id</find>
+      <find>src=&quot;'.$d-&gt;thumbnail.'&quot;</find>
+      <find>covervidz.com/home.php</find>
+      <find>img</find>
+      <find>r&amp;</find>
+      <find>new</find>
     </findStrings>
     <replaceStrings>
       <replace>(&quot;mysql.hostinger.co.uk&quot;,&quot;u368238327_vidz&quot;,&quot;&quot;,&quot;u368238327_vidz&quot;)</replace>
+      <replace>con = mysqli_connect(&quot;mysql.hostinger.co.uk&quot;,&quot;u368238327_user2&quot;,&quot;nBJ4BkUwsq&quot;,&quot;u368238327_vidz2&quot;);</replace>
+      <replace>http://www.covervidz.com</replace>
+      <replace>$con =</replace>
+      <replace>songs.id</replace>
+      <replace>src=&quot;http://img.youtube.com/vi/'.$d-&gt;URL .'/0.jpg&quot;</replace>
+      <replace>covervidz.com</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\Olu\WebstormProjects\covervidzRepo</dir>
@@ -137,13 +166,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/connectPDO2.php" />
-        <option value="$PROJECT_DIR$/genre.php" />
-        <option value="$PROJECT_DIR$/get-data.php" />
         <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/js/connectPDO.php" />
+        <option value="$PROJECT_DIR$/connectPDO2.php" />
+        <option value="$PROJECT_DIR$/get-data.php" />
+        <option value="$PROJECT_DIR$/genre.php" />
         <option value="$PROJECT_DIR$/searchpage.php" />
         <option value="$PROJECT_DIR$/thumbs/video.php" />
+        <option value="$PROJECT_DIR$/uploadPage.html" />
+        <option value="$PROJECT_DIR$/live pages/popular.php" />
+        <option value="$PROJECT_DIR$/live pages/all.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/live pages/new.php" />
         <option value="$PROJECT_DIR$/video.php" />
       </list>
     </option>
@@ -184,6 +218,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="covervidzRepo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="covervidzRepo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="covervidzRepo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="live pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,18 +314,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1482760238806</updated>
-      <workItem from="1482760240487" duration="953000" />
+      <workItem from="1482760240487" duration="5891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="953000" />
+    <option name="totallyTimeSpent" value="5891000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18960468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -298,6 +346,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -306,42 +357,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connectPDO2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/genre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get-data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
-          <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -349,15 +368,15 @@
     <entry file="file://$PROJECT_DIR$/js/connectPDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/searchpage.php">
+    <entry file="file://$PROJECT_DIR$/connectPDO2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="114" column="21" lean-forward="false" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+        <state relative-caret-position="153">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -365,15 +384,79 @@
     <entry file="file://$PROJECT_DIR$/thumbs/video.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <caret line="109" column="51" lean-forward="false" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uploadPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/genre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="71" column="27" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="114" column="90" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="103" column="41" lean-forward="false" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/live pages/all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="105" column="98" lean-forward="false" selection-start-line="105" selection-start-column="98" selection-end-line="105" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/live pages/popular.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="120" column="10" lean-forward="true" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/live pages/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="118" column="18" lean-forward="false" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/video.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="217">
+          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding />
         </state>
       </provider>

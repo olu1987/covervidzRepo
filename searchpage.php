@@ -29,25 +29,25 @@
               <ul class="dropdown-menu">
 			   <li id="but1"><a href="aboutPage.html">About Covervidz</a></li>
 	         <li id="but2"><a href="uploadPage.html">Upload</a></li>
-                <li><a  href="http://localhost/covervidzRepo/searchpage.php?search= ">All Videos</a></li>
+                <li><a  href="http://www.covervidz.com/searchpage.php?search= ">All Videos</a></li>
                 <li><a  href="#">Most recent</a></li>
                 <li><a  href="#">Most viewed</a></li>
                 <li role="separator" class="divider"></li>
 		        <li class="dropdown-header">Genres</li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=pop">Pop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=R%26B">R&B </a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=rock">Rock</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=dance">Dance</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=choreography">Choreography</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=reggae">Reggae</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=metal">Metal</a></li>
-		        <li><a  href="http://localhost/covervidzRepo/genre.php?genre=soul/motown">Soul/Motown</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=pop">Pop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=R%26B">R&B </a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rap/hip-hop">Rap/Hip-hop</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=rock">Rock</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=dance">Dance</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=choreography">Choreography</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=Gospel/Christian">Gospel/Christian</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=reggae">Reggae</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=instrument/instrumental">Instrumental/Instrument</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=metal">Metal</a></li>
+		        <li><a  href="http://www.covervidz.com/genre.php?genre=soul/motown">Soul/Motown</a></li>
               </ul>
 			  </div>
-        <div class="nav-col-2"><a href="http://localhost/covervidzRepo/home.php" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
+        <div class="nav-col-2"><a href="http://www.covervidz.com" class="pull-left"><img class="logo-writing" src="images/covervidz-type.png"/></a></div>
 		
 		
 		<div class="input-group nav-col-3" action="searchpage.php" method="get" >
@@ -59,7 +59,7 @@
            <i class='fa fa-search'></i>
            </button>
           </div>
-        <a href="http://localhost/covervidzRepo/home.php"><img id="logo-button" src="images/covervidz-logo-shadow.png">
+        <a href="http://www.covervidz.com"><img id="logo-button" src="images/covervidz-logo-shadow.png">
 		  
         </div>
    
@@ -112,18 +112,18 @@ if (isset($searchitems2[0])) {
 
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_user2","nBJ4BkUwsq","u368238327_vidz2");
 // Check connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
   
-	//REMMEBER TO CHANGE SONG_ID TO SONGS.ID ON LIVE CODE!!!!!! 
+	//REMMEBER TO CHANGE songs_id TO SONGS.ID ON LIVE CODE!!!!!!
 	 
 $sql2 = "SELECT * FROM covers, genre, songs, artists 
         WHERE (artist LIKE '%".mysqli_real_escape_string($con, $search[0])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[0])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[0])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[0])."%' )
-        AND (artist LIKE '%".mysqli_real_escape_string($con, $search[1])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[1])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[2])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[2])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[3])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[3])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[4])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[4])."%' ) AND genre_id = g_id AND songid = song_id 
+        AND (artist LIKE '%".mysqli_real_escape_string($con, $search[1])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[1])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[1])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[2])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[2])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[2])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[3])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[3])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[3])."%' ) AND (artist LIKE '%".mysqli_real_escape_string($con, $search[4])."%' OR coverArtist LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR name LIKE '%".mysqli_real_escape_string($con, $search[4])."%'OR genreName LIKE '%".mysqli_real_escape_string($con, $search[4])."%' ) AND genre_id = g_id AND songid = songs.id
 		AND Artist_id = a_id		
 		ORDER BY -youtubeViews
 	    LIMIT 30 OFFSET $results
@@ -146,7 +146,7 @@ $sql2 = "SELECT * FROM covers, genre, songs, artists
 if($result2->num_rows > 0){
 echo '<ul class="thumb-box">';
 foreach($data2 as $d){
- echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="'.$d->thumbnail.'"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
+ echo '<a href="video.php/?v='.$d->URL.'"><li class="related" style="width:300px"class="related"><img class="myThumb" src="http://img.youtube.com/vi/'.$d->URL .'/0.jpg"/><br><b>'.$d->name.'</b> - '.$d->artist.'<br><em>'.$d->coverArtist.'</em><br>'.number_format($d->youtubeViews).'</li></a>';
 }
 echo '</ul >';	
 }
@@ -154,13 +154,13 @@ echo '</ul >';
 	   echo "0 results<br>";
    }
 ?>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=0">1-30</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=30">31-60</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=60">61-90</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=90">91-120</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=120">121-150</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=150">151-180</a>
-<a href="http://localhost/covervidzRepo/searchpage.php?r=180">181-210</a>
+<a href="http://www.covervidz.com/searchpage.php?r=0">1-30</a>
+<a href="http://www.covervidz.com/searchpage.php?r=30">31-60</a>
+<a href="http://www.covervidz.com/searchpage.php?r=60">61-90</a>
+<a href="http://www.covervidz.com/searchpage.php?r=90">91-120</a>
+<a href="http://www.covervidz.com/searchpage.php?r=120">121-150</a>
+<a href="http://www.covervidz.com/searchpage.php?r=150">151-180</a>
+<a href="http://www.covervidz.com/searchpage.php?r=180">181-210</a>
 </div>
 <script>
 	  var div = document.getElementById("dom-target");
