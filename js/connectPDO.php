@@ -1,7 +1,7 @@
 <?php
 
 		
-$con = mysqli_connect("localhost","root","","CoverChart2");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
 // Check connection
 if (mysqli_connect_errno())
   {

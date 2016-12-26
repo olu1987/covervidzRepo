@@ -6,7 +6,7 @@ header("Location: http://localhost/covervidzRepo/searchpage.php?search=".$_GET["
 session_start();
 
 //echo 'Hello world ' . htmlspecialchars($_GET["v"]) . '!';
-$con = mysqli_connect("localhost","root","","CoverChart2");
+$con = mysqli_connect("mysql.hostinger.co.uk","u368238327_vidz","","u368238327_vidz");
 // Check connection
 if (mysqli_connect_errno())
   {
